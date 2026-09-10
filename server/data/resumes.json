@@ -1,0 +1,89 @@
+[
+  {
+    "id": "res-1787458394300",
+    "name": "李明",
+    "phone": "13912345678",
+    "email": "liming_dev@163.com",
+    "gender": "男",
+    "age": "26",
+    "degree": "本科",
+    "experienceYears": "5年",
+    "expectedCity": "深圳市",
+    "expectedSalary": "25k-35k",
+    "skills": [
+      "React",
+      "Vue",
+      "Node.js",
+      "TypeScript",
+      "SQL",
+      "Redis",
+      "Docker",
+      "Linux",
+      "Vite"
+    ],
+    "summary": "最高学历: 本科 (华南理工大学 计算机科学与技术)；工作经验: 5年 前端全栈开发经验；期望薪资: 25k-35k",
+    "rawTextSnippet": "\n姓名: 李明\n联系电话: 13912345678\n电子邮箱: liming_dev@163.com\n最高学历: 本科 (华南理工大学 计算机科学与技术)\n工作经验: 5年 前端全栈开发经验\n\n期望城市: 深圳市\n期望薪资: 25k-35k\n职业方向: 全栈工程师 / React 核心开发\n\n核心技能:\n- 熟练掌握 React, Vue3, Node.js, TypeScript, Vite\n- 熟悉 Docker, Linux, SQL, Redis 部署与高并发架构\n- 具备优秀的团队沟通协作能力与微前端经验\n\n工作经历:\n2021-至今 腾讯科技 资深前端工程师\n负责核心组件库架构设计与 Web 可视化工具链研发，提升团队研发效率 30%。\n  ",
+    "score": 100,
+    "parsedAt": "2026-08-23T04:13:14.300Z",
+    "fileUrl": "/uploads/1787458394283-460529100-ææ_å¨æ å·¥ç¨å¸ç®å.txt",
+    "originalFileName": "ææ_å¨æ å·¥ç¨å¸ç®å.txt"
+  },
+  {
+    "id": "res-1787458017258",
+    "name": "李明",
+    "phone": "13912345678",
+    "email": "liming_dev@163.com",
+    "gender": "男",
+    "age": "26",
+    "degree": "本科",
+    "experienceYears": "5年",
+    "expectedCity": "深圳市",
+    "expectedSalary": "25k-35k",
+    "skills": [
+      "React",
+      "Vue",
+      "Node.js",
+      "TypeScript",
+      "SQL",
+      "Redis",
+      "Docker",
+      "Linux",
+      "Vite"
+    ],
+    "summary": "最高学历: 本科 (华南理工大学 计算机科学与技术)；工作经验: 5年 前端全栈开发经验；期望薪资: 25k-35k",
+    "rawTextSnippet": "\n姓名: 李明\n联系电话: 13912345678\n电子邮箱: liming_dev@163.com\n最高学历: 本科 (华南理工大学 计算机科学与技术)\n工作经验: 5年 前端全栈开发经验\n\n期望城市: 深圳市\n期望薪资: 25k-35k\n职业方向: 全栈工程师 / React 核心开发\n\n核心技能:\n- 熟练掌握 React, Vue3, Node.js, TypeScript, Vite\n- 熟悉 Docker, Linux, SQL, Redis 部署与高并发架构\n- 具备优秀的团队沟通协作能力与微前端经验\n\n工作经历:\n2021-至今 腾讯科技 资深前端工程师\n负责核心组件库架构设计与 Web 可视化工具链研发，提升团队研发效率 30%。\n  ",
+    "score": 100,
+    "parsedAt": "2026-08-23T04:06:57.258Z",
+    "fileUrl": "/uploads/1787458017236-348390905-ææ_å¨æ å·¥ç¨å¸ç®å.txt",
+    "originalFileName": "ææ_å¨æ å·¥ç¨å¸ç®å.txt"
+  },
+  {
+    "id": "res-1787457490797",
+    "name": "李明",
+    "phone": "13912345678",
+    "email": "liming_dev@163.com",
+    "gender": "男",
+    "age": "26",
+    "degree": "本科",
+    "experienceYears": "5年",
+    "expectedCity": "深圳市",
+    "expectedSalary": "25k-35k",
+    "skills": [
+      "React",
+      "Vue",
+      "Node.js",
+      "TypeScript",
+      "SQL",
+      "Redis",
+      "Docker",
+      "Linux",
+      "Vite"
+    ],
+    "summary": "最高学历: 本科 (华南理工大学 计算机科学与技术)；工作经验: 5年 前端全栈开发经验；期望薪资: 25k-35k",
+    "rawTextSnippet": "\n姓名: 李明\n联系电话: 13912345678\n电子邮箱: liming_dev@163.com\n最高学历: 本科 (华南理工大学 计算机科学与技术)\n工作经验: 5年 前端全栈开发经验\n\n期望城市: 深圳市\n期望薪资: 25k-35k\n职业方向: 全栈工程师 / React 核心开发\n\n核心技能:\n- 熟练掌握 React, Vue3, Node.js, TypeScript, Vite\n- 熟悉 Docker, Linux, SQL, Redis 部署与高并发架构\n- 具备优秀的团队沟通协作能力与微前端经验\n\n工作经历:\n2021-至今 腾讯科技 资深前端工程师\n负责核心组件库架构设计与 Web 可视化工具链研发，提升团队研发效率 30%。\n  ",
+    "score": 100,
+    "parsedAt": "2026-08-23T03:58:10.797Z",
+    "fileUrl": "/uploads/1787457490779-230826498-ææ_å¨æ å·¥ç¨å¸ç®å.txt",
+    "originalFileName": "ææ_å¨æ å·¥ç¨å¸ç®å.txt"
+  }
+]
