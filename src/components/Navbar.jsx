@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Briefcase, FileText, PlusCircle, UserCheck, Sparkles } from 'lucide-react';
+import { MapPin, Briefcase, FileText, PlusCircle, UserCheck, Sparkles, BookOpen, Info } from 'lucide-react';
 import { useTranslation } from '../i18n/i18n.jsx';
 import LanguageSwitcher from './LanguageSwitcher.jsx';
 
@@ -64,22 +64,24 @@ export default function Navbar({ activeTab, setActiveTab, currentCity, openCityS
 
         {/* Navigation Tabs & Language Switcher */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <button
+              id="nav-jobs"
               onClick={() => setActiveTab('jobs')}
               className={activeTab === 'jobs' ? 'gradient-btn' : 'secondary-btn'}
-              style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+              style={{ padding: '8px 14px', fontSize: '0.88rem' }}
             >
-              <Briefcase size={17} />
+              <Briefcase size={16} />
               {t('nav.jobs')}
             </button>
 
             <button
+              id="nav-resume"
               onClick={() => setActiveTab('resume')}
               className={activeTab === 'resume' ? 'gradient-btn' : 'secondary-btn'}
-              style={{ padding: '8px 16px', fontSize: '0.9rem', position: 'relative' }}
+              style={{ padding: '8px 14px', fontSize: '0.88rem', position: 'relative' }}
             >
-              <FileText size={17} />
+              <FileText size={16} />
               {t('nav.resume')}
               {activeResume && (
                 <span style={{ width: '8px', height: '8px', background: '#10b981', borderRadius: '50%', position: 'absolute', top: '6px', right: '6px' }} />
@@ -87,25 +89,50 @@ export default function Navbar({ activeTab, setActiveTab, currentCity, openCityS
             </button>
 
             <button
+              id="nav-applications"
               onClick={() => setActiveTab('applications')}
               className={activeTab === 'applications' ? 'gradient-btn' : 'secondary-btn'}
-              style={{ padding: '8px 16px', fontSize: '0.9rem' }}
+              style={{ padding: '8px 14px', fontSize: '0.88rem' }}
             >
-              <UserCheck size={17} />
+              <UserCheck size={16} />
               {t('nav.applications')}
             </button>
 
+            {/* Blog Tab */}
             <button
+              id="nav-blog"
+              onClick={() => setActiveTab('blog')}
+              className={activeTab === 'blog' ? 'gradient-btn' : 'secondary-btn'}
+              style={{ padding: '8px 14px', fontSize: '0.88rem' }}
+            >
+              <BookOpen size={16} />
+              {t('nav.blog')}
+            </button>
+
+            {/* About Tab */}
+            <button
+              id="nav-about"
+              onClick={() => setActiveTab('about')}
+              className={activeTab === 'about' ? 'gradient-btn' : 'secondary-btn'}
+              style={{ padding: '8px 14px', fontSize: '0.88rem' }}
+            >
+              <Info size={16} />
+              {t('nav.about')}
+            </button>
+
+            {/* Post Job */}
+            <button
+              id="nav-post-job"
               onClick={() => setActiveTab('postJob')}
               className="gradient-btn"
               style={{
-                padding: '8px 18px',
-                fontSize: '0.9rem',
+                padding: '8px 16px',
+                fontSize: '0.88rem',
                 background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                 boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)'
               }}
             >
-              <PlusCircle size={17} />
+              <PlusCircle size={16} />
               {t('nav.postJob')}
             </button>
           </nav>
@@ -118,4 +145,3 @@ export default function Navbar({ activeTab, setActiveTab, currentCity, openCityS
     </header>
   );
 }
-
