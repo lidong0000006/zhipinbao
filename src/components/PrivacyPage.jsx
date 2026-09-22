@@ -130,7 +130,7 @@ export default function PrivacyPage() {
       }}>
         <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.92rem' }}>
           <strong style={{ color: 'var(--text-main)' }}>{t('privacy.contactTitle')}: </strong>
-          {t('privacy.contactDesc')} <a href="mailto:contact@jobportal.com" style={{ color: '#60a5fa' }}>contact@jobportal.com</a>
+          {t('privacy.contactDesc')} <a href="mailto:lidong0000006@gmail.com" style={{ color: '#60a5fa' }}>lidong0000006@gmail.com</a>
         </p>
       </div>
     </div>

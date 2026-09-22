@@ -127,7 +127,7 @@ export default function TermsPage() {
       }}>
         <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.92rem' }}>
           <strong style={{ color: 'var(--text-main)' }}>{t('terms.contactTitle')}: </strong>
-          {t('terms.contactDesc')} <a href="mailto:contact@jobportal.com" style={{ color: '#60a5fa' }}>contact@jobportal.com</a>
+          {t('terms.contactDesc')} <a href="mailto:lidong0000006@gmail.com" style={{ color: '#60a5fa' }}>lidong0000006@gmail.com</a>
         </p>
       </div>
     </div>

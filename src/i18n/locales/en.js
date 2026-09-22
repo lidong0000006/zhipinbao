@@ -290,7 +290,7 @@ export default {
   'privacy.sec5P2': 'We implement industry-standard security measures including TLS/SSL encryption, access controls, and regular security audits to protect your information.',
   'privacy.sec5P3': 'Despite our best efforts, no data transmission over the internet can be guaranteed to be 100% secure.',
   'privacy.sec6Title': '6. Your Rights',
-  'privacy.sec6P1': 'Depending on your location, you may have the right to access, correct, or delete your personal data; withdraw consent for processing; and lodge a complaint with a data protection authority. To exercise these rights, please contact us at contact@jobportal.com.',
+  'privacy.sec6P1': 'Depending on your location, you may have the right to access, correct, or delete your personal data; withdraw consent for processing; and lodge a complaint with a data protection authority. To exercise these rights, please contact us at lidong0000006@gmail.com.',
   'privacy.sec7Title': '7. Changes to This Policy',
   'privacy.sec7P1': 'We may update this Privacy Policy from time to time. We will notify you of significant changes by posting a notice on our platform or sending you an email. Continued use of the platform after changes constitutes acceptance of the updated policy.',
   'privacy.contactTitle': 'Questions about this policy?',

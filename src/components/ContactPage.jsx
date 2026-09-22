@@ -22,7 +22,7 @@ export default function ContactPage() {
     {
       icon: <Mail size={24} color="#3b82f6" />,
       title: t('contact.emailTitle'),
-      value: 'contact@jobportal.com',
+      value: 'lidong0000006@gmail.com',
       desc: t('contact.emailDesc'),
     },
     {

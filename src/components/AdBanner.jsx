@@ -4,9 +4,8 @@ import React, { useEffect, useRef } from 'react';
  * AdBanner - Google AdSense 广告组件
  * 
  * 使用方法:
- * 1. 申请通过后，将 YOUR_ADSENSE_CLIENT_ID 替换为你的 ca-pub-XXXXXXXXXX
- * 2. 将 YOUR_AD_SLOT_ID 替换为对应广告单元的 slot ID
- * 3. 在 index.html 中取消注释 AdSense script 标签
+ * 1. index.html 中的 AdSense script 用于站点关联和审核
+ * 2. 申请通过后，将下面的广告位 slot ID 替换为 AdSense 后台生成的真实 ID
  * 
  * 广告尺寸参考:
  * - 'horizontal': 728x90 (leaderboard) 或 320x50 (mobile banner)
@@ -15,11 +14,11 @@ import React, { useEffect, useRef } from 'react';
  */
 
 const AD_CONFIG = {
-  client: 'ca-pub-XXXXXXXXXX', // ← 替换为你的 Publisher ID
+  client: 'ca-pub-1547189169506398',
   slots: {
-    horizontal: 'XXXXXXXXXX',  // ← 替换为横幅广告的 slot ID
-    rectangle: 'XXXXXXXXXX',   // ← 替换为矩形广告的 slot ID
-    vertical: 'XXXXXXXXXX',    // ← 替换为竖幅广告的 slot ID
+    horizontal: 'XXXXXXXXXX',
+    rectangle: 'XXXXXXXXXX',
+    vertical: 'XXXXXXXXXX',
   },
 };
 
@@ -48,10 +47,11 @@ const SLOT_STYLES = {
  */
 export default function AdBanner({ type = 'horizontal', className = '', style = {} }) {
   const adRef = useRef(null);
-  const isProduction = AD_CONFIG.client !== 'ca-pub-XXXXXXXXXX';
+  const adSlot = AD_CONFIG.slots[type];
+  const hasValidAdConfig = AD_CONFIG.client.startsWith('ca-pub-') && adSlot && adSlot !== 'XXXXXXXXXX';
 
   useEffect(() => {
-    if (!isProduction) return;
+    if (!hasValidAdConfig) return;
     try {
       if (window.adsbygoogle) {
         window.adsbygoogle.push({});
@@ -59,10 +59,10 @@ export default function AdBanner({ type = 'horizontal', className = '', style = 
     } catch (e) {
       console.warn('AdSense push failed:', e);
     }
-  }, [isProduction]);
+  }, [hasValidAdConfig]);
 
-  // 开发模式：显示占位符
-  if (!isProduction) {
+  // 站点审核阶段可能还没有广告单元 ID，先保留版位但不加载无效广告。
+  if (!hasValidAdConfig) {
     return (
       <div
         style={{
@@ -84,7 +84,7 @@ export default function AdBanner({ type = 'horizontal', className = '', style = 
       >
         <span style={{ fontSize: '1.2rem' }}>📢</span>
         <span>Ad Placeholder ({type})</span>
-        <span style={{ fontSize: '0.7rem', opacity: 0.6 }}>AdSense 广告将在审批后显示</span>
+        <span style={{ fontSize: '0.7rem', opacity: 0.6 }}>AdSense 通过后填入广告位 ID</span>
       </div>
     );
   }
@@ -96,7 +96,7 @@ export default function AdBanner({ type = 'horizontal', className = '', style = 
         className="adsbygoogle"
         style={SLOT_STYLES[type]}
         data-ad-client={AD_CONFIG.client}
-        data-ad-slot={AD_CONFIG.slots[type]}
+        data-ad-slot={adSlot}
         data-ad-format="auto"
         data-full-width-responsive="true"
       />
