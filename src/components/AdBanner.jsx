@@ -53,13 +53,11 @@ export default function AdBanner({ type = 'horizontal', className = '', style = 
   useEffect(() => {
     if (!hasValidAdConfig) return;
     try {
-      if (window.adsbygoogle) {
-        window.adsbygoogle.push({});
-      }
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.warn('AdSense push failed:', e);
     }
-  }, [hasValidAdConfig]);
+  }, []);
 
   // 站点审核阶段可能还没有广告单元 ID，先保留版位但不加载无效广告。
   if (!hasValidAdConfig) {
