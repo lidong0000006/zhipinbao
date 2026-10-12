@@ -16,9 +16,9 @@ import React, { useEffect, useRef } from 'react';
 const AD_CONFIG = {
   client: 'ca-pub-1547189169506398',
   slots: {
-    horizontal: 'XXXXXXXXXX',
-    rectangle: 'XXXXXXXXXX',
-    vertical: 'XXXXXXXXXX',
+    horizontal: '9183166461',
+    rectangle: '9183166461',
+    vertical: '9183166461',
   },
 };
 
