@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Navbar from './components/Navbar.jsx';
 import HeroSection from './components/HeroSection.jsx';
 import JobCard from './components/JobCard.jsx';
@@ -37,10 +37,87 @@ export default function App() {
   const [activeResume, setActiveResume] = useState(null);
   const [stats, setStats] = useState({ totalJobs: 0, totalResumes: 0, totalApplications: 0, activeCities: 0 });
 
+  // ── SEO: Dynamic Title + Meta Description ──────────────────────────────
+  const updatePageMeta = useCallback((tab, city, blogPostId, blogPosts) => {
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const ogTitle  = document.querySelector('meta[property="og:title"]');
+    const ogDesc   = document.querySelector('meta[property="og:description"]');
+
+    // Remove any previous BlogPosting schema
+    const prevSchema = document.getElementById('blog-schema');
+    if (prevSchema) prevSchema.remove();
+
+    let title = 'JobPortal - Global AI Recruitment & Resume Parsing Platform';
+    let desc  = 'Find full-time jobs, part-time gigs, remote work, and internships worldwide. AI-powered resume parsing across 120+ cities.';
+
+    if (tab === 'jobs') {
+      title = `Jobs in ${city} — Full-time, Part-time & Remote | JobPortal`;
+      desc  = `Browse verified full-time, part-time, and remote job listings in ${city}. Upload your PDF resume for instant AI matching.`;
+    } else if (tab === 'resume') {
+      title = 'AI Resume Parser & PDF Upload | JobPortal';
+      desc  = 'Upload your PDF resume and let our AI extract skills, experience, and smart job recommendations instantly.';
+    } else if (tab === 'blog') {
+      if (blogPostId && blogPosts) {
+        const post = blogPosts.find(p => p.id === blogPostId);
+        if (post) {
+          title = `${post.titleEn} | JobPortal Blog`;
+          desc  = post.summaryEn;
+          // Inject BlogPosting schema
+          const schema = {
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: post.titleEn,
+            description: post.summaryEn,
+            datePublished: post.date,
+            author: { '@type': 'Organization', name: 'JobPortal', url: 'https://zhipinbao.vercel.app/' },
+            publisher: { '@type': 'Organization', name: 'JobPortal', url: 'https://zhipinbao.vercel.app/' },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://zhipinbao.vercel.app/?post=${post.id}` },
+          };
+          const el = document.createElement('script');
+          el.id = 'blog-schema';
+          el.type = 'application/ld+json';
+          el.textContent = JSON.stringify(schema);
+          document.head.appendChild(el);
+        }
+      } else {
+        title = 'Career Tips, Resume Guides & Job Search Blog | JobPortal';
+        desc  = 'Expert articles on resume writing, salary negotiation, remote work, AI tools, and part-time career strategies.';
+      }
+    } else if (tab === 'applications') {
+      title = 'My Job Applications Tracker | JobPortal';
+      desc  = 'Track all your job applications in one place. Stay organized and never miss a follow-up.';
+    } else if (tab === 'about') {
+      title = 'About JobPortal | Global AI Recruitment Platform';
+      desc  = 'Learn about JobPortal — the AI-powered global recruitment platform serving job seekers and employers across 120+ cities worldwide.';
+    } else if (tab === 'contact') {
+      title = 'Contact Us | JobPortal';
+      desc  = 'Get in touch with the JobPortal team. We are here to help with your job search or recruitment needs.';
+    } else if (tab === 'privacy') {
+      title = 'Privacy Policy | JobPortal';
+      desc  = 'Read our privacy policy to understand how JobPortal collects, uses, and protects your personal information.';
+    } else if (tab === 'terms') {
+      title = 'Terms of Service | JobPortal';
+      desc  = 'Review the terms and conditions for using the JobPortal recruitment platform.';
+    }
+
+    document.title = title;
+    if (metaDesc) metaDesc.setAttribute('content', desc);
+    if (ogTitle)  ogTitle.setAttribute('content', title);
+    if (ogDesc)   ogDesc.setAttribute('content', desc);
+  }, []);
+
   // On App Mount
   useEffect(() => {
     initApp();
+    updatePageMeta('jobs', currentCity, null, null);
   }, []);
+
+  // Update title when city changes on jobs tab
+  useEffect(() => {
+    if (activeTab === 'jobs') {
+      updatePageMeta('jobs', currentCity, null, null);
+    }
+  }, [currentCity, activeTab]);
 
   // Fetch jobs when city, category, or industry changes
   useEffect(() => {
@@ -91,15 +168,21 @@ export default function App() {
     } else {
       setActiveTab(tab);
       setActiveBlogPostId(null);
+      updatePageMeta(tab, currentCity, null, null);
     }
   };
 
   const handleBlogPostClick = (postId) => {
     setActiveBlogPostId(postId);
+    // Import lazily to avoid circular deps — blogData is already loaded in BlogPostPage
+    import('./utils/blogData.js').then(({ BLOG_POSTS }) => {
+      updatePageMeta('blog', currentCity, postId, BLOG_POSTS);
+    });
   };
 
   const handleBlogBack = () => {
     setActiveBlogPostId(null);
+    updatePageMeta('blog', currentCity, null, null);
   };
 
   const footerLinks = [

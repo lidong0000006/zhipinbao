@@ -1,9 +1,14 @@
 User-agent: *
 Allow: /
 
-# Block API endpoints from indexing
+# Block server API and upload endpoints from indexing
 Disallow: /api/
 Disallow: /server/
+Disallow: /uploads/
+
+# Allow Googlebot-specific access
+User-agent: Googlebot
+Allow: /
 
 # Sitemap location
 Sitemap: https://zhipinbao.vercel.app/sitemap.xml

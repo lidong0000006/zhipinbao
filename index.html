@@ -10,9 +10,9 @@
     <meta name="description" content="Find full-time jobs, part-time gigs, remote work, and internships worldwide. Upload your PDF resume for instant AI parsing and smart job matching across 120+ global cities." />
     <meta name="keywords" content="job portal, AI hiring, resume parser, remote jobs, part-time jobs, full-time jobs, direct recruitment, global jobs, career blog, job search tips" />
     <meta name="robots" content="index, follow" />
-    <meta name="author" content="dong li" />
+    <meta name="author" content="JobPortal" />
 
-    <!-- Canonical URL - Replace with your actual domain -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://zhipinbao.vercel.app/" />
 
     <!-- Open Graph / Social Media -->
@@ -22,11 +22,16 @@
     <meta property="og:url" content="https://zhipinbao.vercel.app/" />
     <meta property="og:site_name" content="JobPortal" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://zhipinbao.vercel.app/og-cover.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JobPortal - Global AI Recruitment & Resume Parsing Platform" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JobPortal - Global AI Recruitment Platform" />
     <meta name="twitter:description" content="AI-powered job matching & resume parsing. Find full-time, part-time, and remote jobs globally." />
+    <meta name="twitter:image" content="https://zhipinbao.vercel.app/og-cover.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +41,43 @@
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1547189169506398"
          crossorigin="anonymous"></script>
+
+    <!-- Schema.org Structured Data: WebSite + Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://zhipinbao.vercel.app/#website",
+          "url": "https://zhipinbao.vercel.app/",
+          "name": "JobPortal",
+          "description": "Global AI Recruitment & PDF Resume Parsing Platform",
+          "inLanguage": ["en", "zh-CN", "ja", "ko", "fr", "es"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://zhipinbao.vercel.app/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://zhipinbao.vercel.app/#organization",
+          "name": "JobPortal",
+          "url": "https://zhipinbao.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://zhipinbao.vercel.app/og-cover.png"
+          },
+          "description": "AI-powered global job portal connecting talent with employers worldwide across 120+ cities.",
+          "sameAs": []
+        }
+      ]
+    }
+    </script>
 
   </head>
   <body>
